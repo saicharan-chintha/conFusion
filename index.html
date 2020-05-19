@@ -31,7 +31,8 @@
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <!-- data-toggle="modal" data-target="#loginModal"  without javascript code -->
+                    <a id="loginModalButton">
                         <span class="fa fa-sign-in"></span> Login
                     </a>
                 </span>
@@ -90,7 +91,8 @@
                 <div class="col-6 col-sm-3 align-self-center">
                     <!-- For adding tooltip uncomment the below line along with the script at the bottom 
                          data-toggle="tooltip" data-html="true" title="Or call us at +852 12345678" href="#reservetable" data-placement="bottom" -->
-                    <a role="button" class="btn-sm btn-warning" data-toggle="modal" data-target="#reserveModal">Reserve Table</a>
+                         <!-- data-toggle="modal" data-target="#reserveModal" using without javascript code -->
+                    <a role="button" class="btn-sm btn-warning" id="reserveModalButton">Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -394,7 +396,16 @@
                 $('#carouselButton').children("span").addClass("fa-pause");
             }
         });
+
+        $("#loginModalButton").click(function() {
+            $("#loginModal").modal("toggle")
+        });
+
+        $("#reserveModalButton").click(function() {
+            $("#reserveModal").modal("toggle")
+        });
     });
+
 </script>
 
 </body>
